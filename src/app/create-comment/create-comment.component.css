@@ -1,0 +1,66 @@
+::ng-deep mat-dialog-container{
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 300px;
+    width: 400px;
+    background-color: white;
+    padding: 8px 12px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header .close{
+    cursor: pointer;
+}
+
+.form{
+    display: grid;
+    place-items: center;
+}
+
+.input{
+    height: 150px;
+    width: 90%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding-top: 0;
+    padding-left: 0;
+    resize: none;
+}
+
+
+.btnContainer{
+    width: 100%;
+    text-align: right;
+    margin-right: 35px;
+}
+
+.btnContainer button{
+    cursor: pointer;
+}
+
+
+.error{
+    margin-left: 19px;
+    color: rgb(185, 3, 3);
+}
+
+

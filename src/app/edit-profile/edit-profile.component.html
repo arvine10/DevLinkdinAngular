@@ -1,0 +1,78 @@
+<div class="container-top">
+
+    <div [formGroup]="editProfile" class="form">
+
+        <!-- User Detail: -->
+        <div class="user" formGroupName="userDetail" >
+            <label for="">UserName</label>
+            <input formControlName="userName" type="text" >
+
+            <label for="">State</label>
+            <input formControlName="state" type="text" >
+
+            <label for="">City</label>
+            <input formControlName="city" type="text" >
+        </div>
+
+        <!-- About Me: -->
+        <div class="aboutMe" formGroupName="aboutMe" >
+            <label for="">About Me</label>
+            <textarea name="" id="" cols="30" rows="10" formControlName="detail"></textarea>
+        </div>
+
+        <!-- Experince -->
+        <div class="experince"  formArrayName="experince">
+            <div class="title">Expereince</div>
+            <div class="container" *ngFor="let child of allJobs.controls; let i = index" 
+                formGroupName="{{i}}" [attr.data-indexvalue]="i" #job>
+                <label for="">Title:</label>
+                <input type="text" formControlName="title">
+
+                <label for="">company:</label>
+                <input type="text" formControlName="company">
+
+                <label for="">Start Date:</label>
+                <input type="text" formControlName="startDate">
+
+                <label for="">End Date:</label>
+                <input type="text" formControlName="endDate">
+
+                <label for="">Description:</label>
+                <input type="text" formControlName="description">
+
+                <div class="remove" (click)="removeExperince(job)">Remove</div>
+            </div>
+            <div class="btn" (click)="addExperince()">Add</div>
+        </div>
+
+        <!-- Education -->
+
+        <div class="education" formArrayName="education">
+            <div class="title">Education</div>
+            <div class="container" *ngFor="let child of userInfo.education; let i = index"
+                formGroupName="{{i}}">
+                <label for="">School</label>
+                <input type="text" formControlName="school">
+
+                <label for="">Degree</label>
+                <input type="text" formControlName="degree">
+
+                <label for="">Feild of Study</label>
+                <input type="text" formControlName="field">
+            </div>
+        </div>
+
+
+        <!-- Skills: -->
+        <div class="skills" formArrayName="skills">
+            <div class="title">Skills:</div>
+            <div class="container" *ngFor="let child of userInfo.skills; let i = index"
+            formGroupName="{{i}}">
+                <label for="">Skill:</label>
+                <input type="text" formControlName="attr">
+                <span class="delete">Delete</span>
+            </div>
+        </div>
+
+    </div>
+</div>

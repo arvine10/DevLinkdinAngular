@@ -1,0 +1,69 @@
+.backDrop{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.3) ;
+    position: relative;
+    z-index: 10;
+}
+
+::ng-deep mat-dialog-container{
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.container{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 450px;
+    width: 350px;
+    padding: 8px 12px;
+    overflow-y: scroll;
+}
+
+.container .title{
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.container .comment{
+    margin: 10px 0;
+    padding: 5px;
+    display: flex;
+    overflow-wrap: break-word
+}
+
+
+.container .userInfo{
+    display: flex;
+    margin-left: 8px;
+    flex-direction: column;
+    font-size: 12px;
+    width: 200px;
+   
+}
+
+
+.container .img{
+    height: 25px;
+    width: 25px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+
+.close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+

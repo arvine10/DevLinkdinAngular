@@ -1,0 +1,145 @@
+input, label{
+    /* display: block; */
+}
+
+.container-top{
+    margin: 20px 15px;
+}
+
+.form{
+    padding: 8px 16px;
+}
+
+.form > .user{
+    margin: 20px 0;
+    padding: 24px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.form > .user input{
+    display: block;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    margin: 4px 0;
+}
+
+.form > .aboutMe{
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+    min-height: 200px;
+    margin: 20px 0;
+}
+
+.form > .aboutMe textarea{
+    padding: 4px;
+    resize: none;
+    margin: 10px 0;
+    min-height: 200px;
+}
+
+
+.form > .experince{
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 8px 16px;
+}
+
+.form > .experince > .container{
+    padding: 8px 16px;
+    margin: 10px 0;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form > .experince > .container input{
+    display: block;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    margin: 4px 0;
+}
+
+.remove{
+    background: #ccc;
+    padding: 8px 12px;
+    width: 65px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.btn{
+    background: #ccc;
+    padding: 8px 12px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.btn:active,
+.remove:active{
+    background: black;
+    color: white;
+}
+
+
+.form .education{
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 8px 16px;
+}
+
+.form .education > .container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.form > .education > .container input{
+    display: block;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    margin: 4px 0;
+}
+
+
+
+.form .skills{
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 8px 16px;
+}
+
+.form .skills > .container{
+    margin: 5px 0;
+}
+
+.form > .skills > .container input{
+    display: block;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    margin: 4px 0;
+}
+
+
+.delete{
+    padding: 8px 12px;
+    background-color: #ccc;
+    cursor: pointer;
+}

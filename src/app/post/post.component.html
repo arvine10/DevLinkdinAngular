@@ -1,0 +1,20 @@
+<div *ngFor="let post of allPosts"  class="container">
+    <div class="post">
+        <div class="title">
+            <div class="profileImg"><div class="img"></div></div>
+            <div class="userName">{{post[2]}}</div>
+        </div>
+        <div class="postImg"></div>
+        <div class="postDesc">{{post[1]}}</div>
+        <div class="comments">
+            <div class="addComment"><img (click)="createCommentDialog(post)" class="commentIcon" src="../../assets/bubble-chat.png" alt=""></div>
+            <button class="viewComments" mat-button (click)="openCommentDialogeBox(post)">View Comments</button>
+        </div>
+        <div class="like">
+            <div class="likes">
+                <span class="heart"><img #heart (click)="likeBtn(post,$event)" [ngClass]="{'liked': post[6] == true}"  src="../../assets/icons8-loading-heart-24.png" alt=""></span>
+                {{post[5]}}
+            </div>
+        </div>
+    </div>
+</div>

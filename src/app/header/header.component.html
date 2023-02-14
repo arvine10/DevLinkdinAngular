@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <ul class="list">
+        <li class="item"> <a routerLink="/" >Home</a></li>
+        <li class="item" *ngIf='!status' > <a routerLink="/register" >Register</a></li>
+        <li class="item" (click)="goToProfile()"  *ngIf='status'> <a >Profile</a></li>
+        <li class="item"  *ngIf='status'><a routerLink="/createPost">Create Post</a></li>
+    </ul>
+    <div *ngIf='!status' class="logstatus"><a routerLink='/login'>Login</a></div>
+    <div (click)="logout()"  *ngIf='status' class="logstatus"><a href="">Logout</a></div>
+</nav>

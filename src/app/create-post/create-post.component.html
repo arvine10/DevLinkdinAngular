@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="createPost">
+        <div class="imgContainer"></div>
+        <input type="file" 
+        name="currentInput"
+        [(ngModel)]="currentInput"
+        (change)="onFileSelected($event)" >
+        <div class="imgPreview"><img [src]="imgSrc" alt=""></div>
+        <form [formGroup]="postForm" action="" (ngSubmit)="submitPost()">
+            <textarea class="desc" formControlName="desc" name="" id="" cols="30" rows="10"></textarea>
+            <div class="btnContainer">
+                <button>Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="backdrop">
+    <div class="container">
+        <div class="title">Comments</div>
+        <div *ngFor="let comment of data" class="allComments">
+            <div class="comment">
+                <div class="img"></div>
+                <div class="userInfo">
+                    <div class="userName">{{comment[0]}}</div>
+                    <div class="desc">{{comment[2]}}</div>
+                </div>
+            </div>
+        </div>
+        <button class="close" (click)="closeDialog()">close</button>
+    </div>
+</div>

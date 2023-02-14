@@ -1,0 +1,77 @@
+<div class="container">
+
+        <div class="header">
+        <div class="imgContainer"><div class="img"></div></div>
+        <div class="info">
+            <div class="name">{{userInfo.userName}}</div>
+            <div class="jobTitle">{{userInfo.jobTitle}}</div>
+            <div class="stateCity">
+                <div class="state">{{userInfo.state}},</div>
+                <div class="city">{{userInfo.city}}</div>
+            </div>
+            <div class="followers">Followers: </div>
+            <div class="following">Following: </div>
+        </div>
+        <div *ngIf="displayFollowBtn" class="follow">
+            <button>Follow</button>
+        </div>
+        <div *ngIf="displayEditBtn" class="edit">
+            <button (click)="editProfile()" >Edit</button>
+        </div>
+    </div>
+
+    <div class="aboutMe">
+        <div class="title">About Me</div>
+        <p>{{userInfo.aboutMe}}</p>
+    </div>
+
+    <div class="background">
+        <div class="heading">Expereince</div>
+        <div *ngFor="let job of experienceList" class="allExperinces">
+            <div class="expereince">
+                <div class="imgContainer" 
+                        [ngClass]="{'noCompanyImage': !job.image}">
+                    <img *ngIf="job.image" [src]="job.image" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">{{job.jobTitle}}</div>
+                    <div class="company">{{job.company}}</div>
+                    <div class="date">
+                        <div class="startDate">{{job.startDate}}</div>
+                        <span>-</span>
+                        <div class="endDate">{{job.endDate}}</div>
+                    </div>
+                    <div class="jobDescription">{{job.jobDescription}}</div>
+                </div>
+            
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+    <div class="education">
+        <div class="title">Education</div>
+        <div *ngFor="let ed of userInfo.education"  class="allDegrees">
+            <div class="degree">
+                <div class="imgContainer"><img src="../../assets/gradImg.png" alt=""></div>
+                <div class="content">
+                    <div class="school">{{ed[0]}}</div>
+                    <div class="degreeType">{{ed[1]}}</div>
+                    <div class="major">{{ed[2]}}</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="skills">
+        <div class="title">Skills</div>
+        <div class="allSkills">
+            <div *ngFor="let skill of userInfo.skills" class="skill">{{skill}}</div>
+        </div>
+        
+    </div>
+</div>
+

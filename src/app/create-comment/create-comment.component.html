@@ -1,0 +1,17 @@
+<div class="backdrop">
+    <div class="container">
+        <div class="header">
+              <h1>Enter Comment:</h1>
+              <button class="close" (click)="close()">Close</button>
+        </div>
+      
+        <form class="form" (ngSubmit)="submitComment()" [formGroup]="form" action="">
+            <textarea class="input" formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+            <div class="btnContainer">
+                <button class="submit">Submit</button>
+            </div>
+        </form>
+        <p class="error" *ngIf="!form.valid && isSubmit" >Please enter text to submit comment</p>
+        
+    </div>
+</div>

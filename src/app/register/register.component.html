@@ -1,0 +1,35 @@
+<div class="reg-container">
+    <form class="form" action="" [formGroup]='regForm' (ngSubmit)="onSubmit()">
+        <div class="userDetails" formGroupName="userDetails">
+            <div class="firstName">
+                <label for="">First Name: </label>
+                <input type="text" formControlName="firstName">
+            </div>
+            <div class="lastName">
+                <label for="">Last Name: </label>
+                <input type="text" formControlName="lastName">
+            </div>
+            <div class="userName">
+                <label for="">UserName: </label>
+                <input type="text" formControlName="userName">
+            </div>
+            <div class="password">
+                <label for="">Password: </label>
+                <input type="password" formControlName="password">
+            </div>
+            <p class="error" *ngIf="regForm.controls.userDetails.controls.password.errors?.['required'] && submited">Password is incorrect format </p>
+        </div>
+        <div class="contact" formGroupName="contact">
+            <div class="number">
+                <label for="">Phone Number: </label>
+                <input type="text" formControlName="phoneNumber">
+            </div>
+            <div class="email">
+                <label for="">Email: </label>
+                <input type="text" formControlName="email">
+            </div>
+        </div>
+
+        <button>Submit</button>
+    </form>
+</div>

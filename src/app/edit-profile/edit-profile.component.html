@@ -49,8 +49,8 @@
 
         <div class="education" formArrayName="education">
             <div class="title">Education</div>
-            <div class="container" *ngFor="let child of userInfo.education; let i = index"
-                formGroupName="{{i}}">
+            <div class="container" *ngFor="let child of allEducation.controls; let i = index"
+                formGroupName="{{i}}" [attr.data-indexvalue]="i" #ed>
                 <label for="">School</label>
                 <input type="text" formControlName="school">
 
@@ -59,19 +59,24 @@
 
                 <label for="">Feild of Study</label>
                 <input type="text" formControlName="field">
+
+                <div (click)="removeEducation(ed)" class="btn">Remove</div>
             </div>
+
+            <div (click)="addEducation()" class="btn">Add</div>
         </div>
 
 
         <!-- Skills: -->
         <div class="skills" formArrayName="skills">
             <div class="title">Skills:</div>
-            <div class="container" *ngFor="let child of userInfo.skills; let i = index"
-            formGroupName="{{i}}">
+            <div class="container" *ngFor="let child of allSkills.controls; let i = index"
+            formGroupName="{{i}}" [attr.data-indexvalue]="i" #skill>
                 <label for="">Skill:</label>
                 <input type="text" formControlName="attr">
-                <span class="delete">Delete</span>
+                <div (click)="removeSkill(skill)" class="delete">Delete</div>
             </div>
+            <div (click)="addSkill()" class="addSkill">Add</div>
         </div>
 
     </div>

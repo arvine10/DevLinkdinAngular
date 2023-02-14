@@ -17,6 +17,8 @@ export class EditProfileComponent implements OnInit {
   userInfo : any;
   editProfile! : FormGroup ;
   allJobs : any;
+  allEducation: any;
+  allSkills : any;
 
   initForm(){
     this.editProfile = new FormGroup({
@@ -112,6 +114,30 @@ export class EditProfileComponent implements OnInit {
     return allSkills;
   }
 
+  removeSkill(skill : any){
+    const index = skill.dataset['indexvalue'];
+    let skills  = <FormArray>this.editProfile.controls['skills'];
+    console.log(skills);
+    skills.removeAt(index);
+    this.allSkills = skills;
+  }
+
+
+  private createSkillFormGroup(): FormGroup {
+    return new FormGroup({
+      attr : new FormControl('')
+    })
+  }
+
+
+  addSkill(){
+    const skills = this.editProfile.get('skills') as FormArray;
+    this.userInfo.experiences.push({});
+    skills.push(this.createSkillFormGroup());
+    this.allSkills = skills;
+  }
+
+
   ///////////////////////////////////////////////////////////////
 
 
@@ -139,6 +165,27 @@ export class EditProfileComponent implements OnInit {
   }
 
 
+  removeEducation(ed : any){
+    const index = ed.dataset['indexvalue'];
+    let education  = <FormArray>this.editProfile.controls['education'];
+    education.removeAt(index);
+    this.allEducation = education;
+  }
+
+  private createEducationFormGroup(): FormGroup {
+    return new FormGroup({
+      school : new FormControl(''),
+      degree : new FormControl(''),
+      field : new FormControl('')
+    })
+  }
+
+  addEducation(){
+    const education = this.editProfile.get('education') as FormArray;
+    education.push(this.createEducationFormGroup());
+    this.allEducation = education;
+  }
+
  ///////////////////////////////////////////////////////
 
 
@@ -153,6 +200,8 @@ export class EditProfileComponent implements OnInit {
        // make segments all within reactive form
        this.initForm();
        this.allJobs = this.editProfile.controls['experince'] as FormArray;
+       this.allEducation = this.editProfile.controls['education'] as FormArray;
+       this.allSkills = this.editProfile.controls['skills'] as FormArray;
       }
     )
 

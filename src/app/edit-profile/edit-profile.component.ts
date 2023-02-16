@@ -188,25 +188,29 @@ export class EditProfileComponent implements OnInit {
 
 
  submitForm(event : any){
-    // console.log(this.editProfile.controls);
     let returnObj : any = {};
     const skillObj = this.editProfile.controls['skills'].value;
     let skillList = Object.keys(skillObj).map((key) => skillObj[key]['attr']);
     
     let educationObj = this.editProfile.controls['education'].value;
-    let educationList = Object.keys(educationObj).map((key) => [educationObj[key]['school'], 
-                                                                educationObj[key]['degree'],
-                                                                educationObj[key]['field']
-                                                               ]);
-    console.log(educationList);
+    let educationList = Object.keys(educationObj)
+    .map( (key) => 
+      [educationObj[key]['school'], 
+      educationObj[key]['degree'],
+      educationObj[key]['field']]
+    );
+    
+    let userDetailObj = this.editProfile.controls['userDetail'].value;
+    let userDetailList = Object.keys(userDetailObj).map((key) => [userDetailObj[key]]);
 
 
-    returnObj['userDetail'] = this.editProfile.controls['userDetail'].value;
-    returnObj['aboutMe'] = this.editProfile.controls['aboutMe'].value;
-    returnObj['education'] = this.editProfile.controls['education'].value;
+    returnObj['userDetail'] = userDetailList;
+    returnObj['aboutMe'] = this.editProfile.controls['aboutMe'].value['detail'];
+    returnObj['education'] = educationList
     returnObj['experince'] = this.editProfile.controls['experince'].value;
-    returnObj['skills'] = this.editProfile.controls['skills'].value;
+    returnObj['skills'] = skillList;
     console.log(returnObj);
+    // post this to localhost/users/editprofile
  }
 
 

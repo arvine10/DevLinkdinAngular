@@ -52,6 +52,7 @@ export class EditProfileComponent implements OnInit {
 
   private createExperinceFormGroup(): FormGroup {
     return new FormGroup({
+      id : new FormControl(-1),
         title : new FormControl(''),
         company : new FormControl(''),
         startDate : new FormControl(''),
@@ -63,10 +64,8 @@ export class EditProfileComponent implements OnInit {
 
   addExperince(){
    const experince = this.editProfile.get('experince') as FormArray;
-   this.userInfo.experiences.push({});
    experince.push(this.createExperinceFormGroup());
    this.allJobs = experince;
-   console.log(experince);
   }
 
   getExperinceFormBuilder(exp : any){
@@ -132,7 +131,6 @@ export class EditProfileComponent implements OnInit {
 
   addSkill(){
     const skills = this.editProfile.get('skills') as FormArray;
-    this.userInfo.experiences.push({});
     skills.push(this.createSkillFormGroup());
     this.allSkills = skills;
   }
@@ -187,6 +185,29 @@ export class EditProfileComponent implements OnInit {
   }
 
  ///////////////////////////////////////////////////////
+
+
+ submitForm(event : any){
+    // console.log(this.editProfile.controls);
+    let returnObj : any = {};
+    const skillObj = this.editProfile.controls['skills'].value;
+    let skillList = Object.keys(skillObj).map((key) => skillObj[key]['attr']);
+    
+    let educationObj = this.editProfile.controls['education'].value;
+    let educationList = Object.keys(educationObj).map((key) => [educationObj[key]['school'], 
+                                                                educationObj[key]['degree'],
+                                                                educationObj[key]['field']
+                                                               ]);
+    console.log(educationList);
+
+
+    returnObj['userDetail'] = this.editProfile.controls['userDetail'].value;
+    returnObj['aboutMe'] = this.editProfile.controls['aboutMe'].value;
+    returnObj['education'] = this.editProfile.controls['education'].value;
+    returnObj['experince'] = this.editProfile.controls['experince'].value;
+    returnObj['skills'] = this.editProfile.controls['skills'].value;
+    console.log(returnObj);
+ }
 
 
   

@@ -1,6 +1,6 @@
 <div class="container-top">
 
-    <div [formGroup]="editProfile" class="form">
+    <div [formGroup]="editProfile" (ngSubmit)="submitForm($event)" class="form">
 
         <!-- User Detail: -->
         <div class="user" formGroupName="userDetail" >
@@ -79,5 +79,7 @@
             <div (click)="addSkill()" class="addSkill">Add</div>
         </div>
 
+
+        <button (click)="submitForm($event)">Submit</button>
     </div>
 </div>

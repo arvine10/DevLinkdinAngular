@@ -143,3 +143,13 @@ input, label{
     background-color: #ccc;
     cursor: pointer;
 }
+
+
+.skills .addSkill{
+    margin: 10px 0;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 8px 16px;
+    width: 50px;
+    text-align: center;
+}

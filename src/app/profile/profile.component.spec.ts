@@ -8,7 +8,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
 import { of } from 'rxjs';
 
-fdescribe('ProfileComponent', () => {
+describe('ProfileComponent', () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
   let profileServiceSpy : jasmine.SpyObj<ProfileService>
@@ -45,12 +45,13 @@ fdescribe('ProfileComponent', () => {
     await fixture.whenStable()
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should test ngOninit() method`, ()=>{
+  xit(`should test ngOninit() method`, ()=>{
     profileServiceSpy.getUserById.and.returnValue(of(fakeUser));
+    component.ngOnInit();
     expect(component.userInfo).toEqual(fakeUser);
 
   });

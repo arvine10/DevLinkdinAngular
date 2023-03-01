@@ -45,7 +45,12 @@
 
 .info .following{
     margin-bottom: 5px;
+    cursor: pointer;
 }
+.info .following:hover{
+    color: blue;
+}
+
 
 
 .follow, .edit{

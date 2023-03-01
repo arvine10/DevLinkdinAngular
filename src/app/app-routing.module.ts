@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FollowingPageComponent } from './following-page/following-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path: 'createPost', component: CreatePostComponent},
   {path: 'profile/:id', component: ProfileComponent},
-  {path: 'editProfile/:id', component: EditProfileComponent}
+  {path: 'editProfile/:id', component: EditProfileComponent},
+  {path: 'following', component: FollowingPageComponent}
 ];
 
 @NgModule({

@@ -25,6 +25,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FollowingPageComponent } from './following-page/following-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     CreatePostComponent,
     ProfileComponent,
     EditProfileComponent,
+    FollowingPageComponent,
   ],
   imports: [
     BrowserModule,

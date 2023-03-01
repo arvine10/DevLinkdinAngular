@@ -29,6 +29,11 @@ export class ProfileComponent implements OnInit {
   education : any  = [];
 
 
+  goToFollowingPage(){
+    this.route.navigate(['/following']);
+  }
+
+
 
   editProfile(){
     this.route.navigate([`/editProfile/${this.userInfo.id}`])
@@ -76,9 +81,10 @@ export class ProfileComponent implements OnInit {
     else this.displayFollowBtn = true;
   }
 
-  ngOnInit(): void {
+
+  initComponent(){
     const id = this.activeRoute.snapshot.params['id'];
-    this.profileService.getUserById(id).subscribe(
+    this.profileService.getUserById(1).subscribe(
       (val)=>{
         this.userInfo = val; 
         this.experienceList = val.experiences;
@@ -87,8 +93,10 @@ export class ProfileComponent implements OnInit {
         this.addImageToEachExperince();
       }
     )
-   
-    
+  }
+
+  ngOnInit(){
+   this.initComponent();
   }
 
 }

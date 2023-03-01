@@ -10,7 +10,7 @@
                 <div class="city">{{userInfo.city}}</div>
             </div>
             <div class="followers">Followers: </div>
-            <div class="following">Following: </div>
+            <div (click)="goToFollowingPage()" class="following">Following: </div>
         </div>
         <div *ngIf="displayFollowBtn" class="follow">
             <button>Follow</button>
